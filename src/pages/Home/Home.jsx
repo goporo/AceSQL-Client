@@ -26,15 +26,9 @@ const Home = () => {
   };
 
   return (
-    <div className='Home'>
+    <div className=''>
       <div className="text-xl text-[red]">
-        <div className="bg-slate-300 w-full h-full">
-          <div className="flex flex-row gap-3">
-            <div className="bg-white w-20 h-20"></div>
-            <div className="bg-white w-20 h-20"></div>
-            <div className="bg-white w-20 h-20"></div>
-          </div>
-
+        <div className="bg-slate-300">
           <table className="min-w-full bg-white border border-gray-300">
             <thead>
               <tr>

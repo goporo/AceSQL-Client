@@ -17,6 +17,9 @@
   },
   "plugins": ["react", "react-hooks"],
   "rules": {
-    //add customize rules here as per your project's needs
+    "no-unused-vars": "warn",
+    "react/prop-types": "off",
+    "react-hooks/rules-of-hooks": "off",
+    "no-constant-condition": "off"
   }
 }

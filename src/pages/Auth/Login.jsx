@@ -8,6 +8,8 @@ import UiSpinning from '../../components/ui/UiSpinning/UiSpinning';
 import UiButton from '../../components/ui/UiButton/UiButton';
 import authService from '../../services/authService';
 import { ROUTES } from '../../routes/RouterConfig';
+import axios from 'axios';
+import api from '../../config/axios';
 
 const Login = () => {
     const [onLoadingSubmit, setOnLoadingSubmit] = useState(false);
@@ -36,27 +38,33 @@ const Login = () => {
             setOnLoadingSubmit(true);
 
             // Send login request to your backend API
-            // const response = await axios.post('YOUR_BACKEND_LOGIN_API_URL', data);
+            const response = await api.post('/authentication/login', data);
 
-            // sample token
-            const token = 'eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiQWRtaW4iLCJJc3N1ZXIiOiJJc3N1ZXIiLCJVc2VybmFtZSI6IkphdmFJblVzZSIsImV4cCI6MTcwMTM1OTAwNiwiaWF0IjoxNzAxMzU5MDA2fQ.8_ehOUhNWjR9haBUQnysfmDGAj68ilqCh22-32nBTP8';
+            console.log(response);
 
-            const user = {}
+            if (response.status !== 200) {
+                throw new Error('Login failed');
+            }
 
-            if (isAccessTokenValid(token)) {
-                setTimeout(() => {
+            const user = response.data;
+            const token = user.token;
 
-                    authService.handleLogin(dispatch, user, token);
-                    navigate(ROUTES.Home);
-                    setOnLoadingSubmit(false);
-
-                }, 1000);
+            if (token) {
+                authService.handleLogin(dispatch, user, token);
+                navigate(ROUTES.Home);
+                setOnLoadingSubmit(false);
             }
 
 
 
         } catch (error) {
             console.error('Login failed', error);
+        }
+
+        finally {
+            // This block will be executed whether an error occurred or not
+            // will add error display later
+            setOnLoadingSubmit(false);
         }
     };
 

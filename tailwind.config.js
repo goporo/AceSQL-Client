@@ -13,6 +13,12 @@ module.exports = {
           darker: '#3699B8',
           200: '#D5E5F1',
         },
+        purple:{
+          primary: '#4354f9',
+          light: '#2DA3CA',
+          darker: '#3699B8',
+          200: '#D5E5F1',
+        }
       }
     },
   },

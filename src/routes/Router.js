@@ -8,6 +8,7 @@ import Login from '../pages/Auth/Login';
 import ProtectedRoute from '../pages/Auth/ProtectedRoute';
 import NotFound from '../pages/404/NotFound';
 import QuizStore from '../pages/quiz-store/quiz-store';
+import Profile from '../pages/Profile/Profile';
 
 const Router = () => {
   return (
@@ -21,6 +22,7 @@ const Router = () => {
         <Route path={ROUTES.Home} element={<Home />} />
         <Route path={ROUTES.About} element={<About />} />
         <Route path={ROUTES.QuizStore} element={<QuizStore />} />
+        <Route path={ROUTES.Profile} element={<Profile />} />
 
       </Route>
 

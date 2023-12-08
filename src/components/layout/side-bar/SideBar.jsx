@@ -69,16 +69,16 @@ const SideBar = () => {
     };
 
     return (
-        //bg-gradient-to-br from-blue-light to-blue-darker
+        //bg-gradient-to-br from-blue-light to-blue-darker//logo copy từ figma nên ko b chỉnh
         <nav className="w-[14.625rem] h-screen">
-            
             <div className="relative w-[282px] h-[102px] overflow-hidden">
-                <div className="absolute w-[217px] top-[28px] left-[101px] [font-family:'Inter-ExtraBold',Helvetica] font-extrabold text-[#4354f9] text-[32px] tracking-[0] leading-[normal]">
-                    AceSQL</div>
-      <div className="absolute w-[48px] h-[48px] top-[23px] left-[29px] bg-[#4354f9] rounded-[24px]">
-        <div className="relative w-[20px] h-[20px] top-[14px] left-[14px] bg-white rounded-[10px]" />
-      </div>
-    </div>
+                <div className="absolute w-[217px] top-[28px] left-[90px] [font-family:'Inter-ExtraBold',Helvetica] font-extrabold text-[#4354f9] text-[32px] tracking-[0] leading-[normal]">
+                    AceSQL
+                </div>
+                <div className="absolute w-[48px] h-[48px] top-[23px] left-[29px] bg-[#4354f9] rounded-[24px]">
+                    <div className="relative w-[20px] h-[20px] top-[14px] left-[14px] bg-white rounded-[10px]" />
+                </div>
+            </div>
             {navItems.map((item, index) => {
                 const isActive = CheckIsActive(item.path, item.rootPath);
                 return (<NavItem key={index} isActive={isActive} path={item.path} title={item.title} icon={item.icon} />)

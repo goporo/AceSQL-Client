@@ -12,6 +12,7 @@ import loginimg from '../../assets/images/login-image.png'
 import axios from 'axios';
 import api from '../../config/axios';
 
+import loginimg from '../../assets/images/login-image.png'
 const Login = () => {
     const [onLoadingSubmit, setOnLoadingSubmit] = useState(false);
 

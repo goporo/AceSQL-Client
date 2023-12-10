@@ -31,15 +31,15 @@ const navItems = [
 const NavItem = (props) => {
     const { title, icon, path, isActive = false } = props;
     const activeClassName = 'bg-blue-primary text-white';
-    const notActiveClassName = 'bg-white text-black';
+    const notActiveClassName = 'bg-white text-black hover:bg-slate-100 ';
 
     return (
         <Link to={path || '/#'}>
             <div className={clsx(
-                'flex h-11 justify-start gap-4 px-12 items-center cursor-pointer hover:bg-blue-primary hover:text-white',
-                isActive ? activeClassName : notActiveClassName
+                'flex h-11 justify-start gap-4 px-12 items-center cursor-pointer  ',
+                isActive ? activeClassName : notActiveClassName,
             )}>
-                <FontAwesomeIcon icon={icon} className={`h-5 w-5 leading-[0px] ${isActive ? 'text-white' : 'text-black'}`} />
+                <FontAwesomeIcon icon={icon} className={`h-5 w-5 leading-[0px] `} />
                 <div className=" ">{title}</div>
             </div>
         </Link>

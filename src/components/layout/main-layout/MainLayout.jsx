@@ -4,14 +4,19 @@ import SideBar from '../side-bar/SideBar'
 
 const MainLayout = ({ children }) => {
     return (
-        <div className=''>
+        <div className='bg-slate-100 h-full min-h-screen'>
             <div className="fixed left-0 top-0 z-10">
                 <SideBar />
             </div>
-            <div className='flex flex-col h-screen relative pl-[14.625rem]'>
-                <Header />
-                <div className="bg-slate-100 flex-1">
-                    {children}
+
+            <div className='pl-[14.625rem]'>
+                <div className="fixed top-0 w-[calc(100vw-14.625rem)]">
+                    <Header />
+                </div>
+                <div className="flex-1 pt-16">
+                    <div className="py-4 px-2">
+                        {children}
+                    </div>
                 </div>
 
             </div>

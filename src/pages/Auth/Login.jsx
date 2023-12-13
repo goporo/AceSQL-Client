@@ -4,12 +4,12 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import AuthWrapper from './AuthWrapper';
 import { jwtDecode } from "jwt-decode";
-import UiSpinning from '../../components/ui/UiSpinning/UiSpinning';
-import UiButton from '../../components/ui/UiButton/UiButton';
 import authService from '../../services/authService';
 import { ROUTES } from '../../routes/RouterConfig';
 import axios from 'axios';
 import api from '../../config/axios';
+import UiSpinning from 'components/common/ui/UiSpinning/UiSpinning';
+import UiButton from 'components/common/ui/UiButton/UiButton';
 
 const Login = () => {
     const [onLoadingSubmit, setOnLoadingSubmit] = useState(false);
@@ -40,7 +40,6 @@ const Login = () => {
             // Send login request to your backend API
             const response = await api.post('/authentication/login', data);
 
-            console.log(response);
 
             if (response.status !== 200) {
                 throw new Error('Login failed');

@@ -17,7 +17,7 @@ const UiButton = ({ children,
             : 'w-fit'
         }  
       ${type === 'primary'
-          ? 'h-[40px] bg-green-primary text-white'
+          ? 'h-[40px] bg-blue-primary text-white'
           : type === 'secondary'
             ? 'h-[40px] bg-gray-300'
             : 'h-[32px] bg-blue-primary text-white'

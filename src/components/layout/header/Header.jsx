@@ -15,7 +15,7 @@ const Header = () => {
 
     return (
 
-        <header className='z-10 h-16 flex flex-row justify-between items-center px-6'>
+        <header className='z-10 h-16 w-full bg-white flex flex-row justify-between items-center px-6 shadow-sm'>
             <div></div>
             <div
                 className="relative cursor-pointer"

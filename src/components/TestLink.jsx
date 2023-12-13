@@ -5,7 +5,7 @@ const STATUS = {
   NORMAL: 'normal',
 };
 
-export default function Link({ page, children }) {
+export default function TestLink({ page, children }) {
   const [status, setStatus] = useState(STATUS.NORMAL);
 
   const onMouseEnter = () => {

@@ -13,6 +13,13 @@ module.exports = {
           darker: '#3699B8',
           200: '#D5E5F1',
         },
+        black: {
+          primary: '#000000',
+        },
+        green: {
+          primary: '#355E3B',
+        }
+
       }
     },
   },

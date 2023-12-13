@@ -1,20 +1,21 @@
 import clsx from 'clsx';
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom';
-import { faHouse } from '@fortawesome/free-solid-svg-icons';
+import { faHouse, faShield } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { ROUTES } from 'routes/RouterConfig';
 
 
 const navItems = [
     {
         title: 'Dashboard',
         icon: faHouse,
-        path: '/',
+        path: ROUTES.Home,
     },
     {
-        title: 'About',
-        icon: faHouse,
-        path: '/about',
+        title: 'My Insurance',
+        icon: faShield,
+        path: ROUTES.MyInsurance,
     },
     {
         title: 'History',
@@ -65,9 +66,11 @@ const SideBar = () => {
 
     return (
         //bg-gradient-to-br from-blue-light to-blue-darker
-        <nav className="w-[14.625rem] h-screen">
-            <div>
-                <img src="/assets/images/logo.png" alt="logo" />
+        <nav className="w-[14.625rem] h-screen shadow-sm bg-white">
+            <div className='p-4'>
+                <Link to={ROUTES.Home} >
+                    <img src="/assets/images/logo.png" alt="logo" />
+                </Link>
             </div>
             {navItems.map((item, index) => {
                 const isActive = CheckIsActive(item.path, item.rootPath);

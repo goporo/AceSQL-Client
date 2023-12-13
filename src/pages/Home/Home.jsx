@@ -1,66 +1,44 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { ROUTES } from '../../routes/RouterConfig';
-import axios from '../../config/axios';
+import { getProductsRequest } from 'requests/product.request';
+import ProductItem from 'components/section/product/ProductItem';
 
 const Home = () => {
-  const [users, setUsers] = useState([]);
-  const navigate = useNavigate();
+  const [response, setResponse] = useState([]);
+  const [fetchLoading, setFetchLoading] = useState(false);
+
+
+
 
   useEffect(() => {
-    const fetchUsers = async () => {
-      try {
+    const handleFetchProjects = async () => {
+      if (fetchLoading) return;
 
-        const response = await axios.get('/users');
-        setUsers(response.data.users);
+      setFetchLoading(true);
+      try {
+        const fetchResult = await getProductsRequest();
+        const data = fetchResult?.data;
+        setResponse(data);
       } catch (error) {
-        console.error('Error fetching users:', error);
+        console.error('Error fetching products:', error);
+      } finally {
+        setFetchLoading(false);
       }
     };
 
-    fetchUsers();
+    handleFetchProjects();
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const changeDir = (dir) => {
-    navigate(dir);
-  };
+
 
   return (
     <div className=''>
-      <div className="text-xl text-[red]">
-        <div className="bg-slate-300">
-          <table className="min-w-full bg-white border border-gray-300">
-            <thead>
-              <tr>
-                <th className="py-2 px-4 border-b">ID</th>
-                <th className="py-2 px-4 border-b">Username</th>
-                <th className="py-2 px-4 border-b">Email</th>
-                <th className="py-2 px-4 border-b">Created At</th>
-                <th className="py-2 px-4 border-b">Updated At</th>
-              </tr>
-            </thead>
-            <tbody>
-              {users.map((user) => (
-                <tr key={user.id}>
-                  <td className="py-2 px-4 border-b">{user.id}</td>
-                  <td className="py-2 px-4 border-b">{user.username}</td>
-                  <td className="py-2 px-4 border-b">{user.email}</td>
-                  <td className="py-2 px-4 border-b">{user.createdAt}</td>
-                  <td className="py-2 px-4 border-b">{user.updatedAt}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+      <div className='p-12'>
+        <div className="flex flex-col gap-6">
+          <ProductItem response={response} fetchLoading={fetchLoading} />
         </div>
       </div>
-      <button
-        className={`bg-[#3498db] p-[10px] text-[white] rounded-md hover:bg-[red] hover:text-[#3498db]`}
-        onClick={() => {
-          changeDir(ROUTES.About);
-        }}
-      >
-        Go To About
-      </button>
     </div>
   );
 };

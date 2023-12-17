@@ -1,12 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 // eslint-disable-next-line no-undef
 module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-  ],
+  content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
       colors: {
+        primary: '#ED1B2E',
         blue: {
           primary: '#2DA3CA',
           light: '#2DA3CA',
@@ -18,9 +17,11 @@ module.exports = {
         },
         green: {
           primary: '#355E3B',
-        }
-
-      }
+        },
+        slate: {
+          primary: '#f7f7f7',
+        },
+      },
     },
   },
   plugins: [],

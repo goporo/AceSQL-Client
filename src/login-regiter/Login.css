@@ -1,0 +1,146 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color:white;
+    display: flex;
+    justify-content: center;
+}
+
+.form-login{
+    width: 450px;
+    min-height: 100vh;
+    background-color:white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+hr{
+    width: 100%;
+    margin-top: 30px;
+}
+
+h1{
+    font-size: 32px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+
+.sign-up{
+    visibility: hidden;
+}
+
+.connect-gg{
+    font-size: 14px;
+    padding: 12px 135px;
+    border: 1px solid grey;
+    border-radius: 2cap;
+    background-color: white;
+}
+
+.connect-gg label{
+    padding-left: 10px;
+    font-size: 16px;
+    display: inline;
+}
+.input-box div{
+    padding-top: 20px;
+    padding-bottom: 2px;
+    color: grey;
+}
+
+.input-box input{
+    width: 450px;
+    height: 35px;
+    border: 1px solid lightgrey;
+    border-radius: 1cap;
+}
+
+.remember-me {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 15px;
+    color:rgb(43, 47, 47) ;
+    width: 100%;
+}
+
+.fotgot{
+    padding-left: 300px;
+    padding-bottom: 60px;
+}
+
+.submit-button{
+    width: 90%;
+    color: #fff;
+    background-color: rgb(195, 195, 195);
+    font-size: 22px;
+    border-radius: 2cap;
+    border: none;
+    height: 50px;
+}
+
+.about {
+    display: flex;
+    justify-content: center;
+    color: rgb(60, 55, 55);
+    font-weight: bold;
+}
+
+.about .item{
+    padding: 10px 15px;
+}
+
+.small-p{
+    float: left;
+    width: 450px;
+    font-size: 13px;
+    color: grey;
+}
+
+.question{
+    width: 450px;
+    padding-bottom: 10px;
+}
+
+.grey{
+    color: grey;
+}
+
+.anwser{
+    width: 400px;
+    padding-bottom: 20px;
+}
+
+.anwser .item{
+    padding-left:52px;
+}
+
+.time{
+    display: flex;
+}
+
+.time span{
+    padding: 0px 25px;
+}
+
+.input-box-time div{
+    padding-bottom: 2px;
+    color: grey;
+}
+
+.input-box-time input{
+    width: 100px;
+    height: 35px;
+    border: 1px solid lightgrey;
+    border-radius: 1cap;
+}

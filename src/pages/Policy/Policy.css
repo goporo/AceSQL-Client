@@ -1,0 +1,105 @@
+.container {
+    width: 100%;
+    height: 100vh;
+
+}
+.left {
+    float: left;
+    background-color: rgb(73, 127, 172);
+    height: 100vh;
+    width: 20%;
+}
+.right {
+    height: 100vh;
+    width: 80%;
+    float: right;
+}
+.logo {
+    height:20vh;
+    width:20%;
+    text-align: center;
+    background: rgb(78, 138, 221);
+    color: white;
+    position: absolute;
+}
+#logout{
+    width: 100px;
+    height:30px;
+    background-color: red;
+    border-radius: 3px;
+    border:0px;
+    color:white;
+}
+.cs {
+    height: 10%;
+    border-bottom: 1px solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+    padding-right:10px;
+}
+.ChinhSachLabel{
+    text-align: left;
+    padding-left:10px;
+    font-size:200%;
+    width:80%;
+    height:20px;
+}
+.search{
+    text-align: left;
+    padding-left:10px;
+    padding-top:30px;
+    width:80%;
+    height:10%;
+}
+#searching{
+    border: 3px solid #9EBDC6;
+    border-radius: 5px;
+    width: 75vw;
+    height:90%;
+
+}
+.content{
+    padding-top:20vh;
+    color: #ccc;
+    text-align:left;
+    font-size:15px;
+}
+.labeltext{
+    padding-left:10px;
+}
+ul,li{
+    list-style-type: none;
+    text-align: left;
+    padding-left: 20%;
+}
+table{
+    margin-left:20px;
+}
+td,tr {
+    padding-right: 13vh;
+    border-bottom: 1px solid black;
+}
+thead{
+    font-size:15px;
+    font-weight: bold;
+    border-bottom: 1px solid black;
+}
+.addcs{
+    height: 5%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding-right:5%;
+    margin-bottom:2%;
+}
+#addcsbutton{
+    width: 150px;
+    height:30px;
+    background-color: #28A9D3;
+    border-radius: 3px;
+    border:0px;
+    color:white;
+    text-align: center;
+}
